@@ -8,53 +8,47 @@ const technologies = [
   {
     category: "Video Game Development",
     items: [
-      { name: "Unity", icon: <BiLogoUnity className="text-sky-500" /> },
+      { name: "Unity", icon: <BiLogoUnity className="text-black" /> },
       { name: "Unreal Engine 5", icon: <SiUnrealengine className="text-black" /> },
-      { name: "C++", icon: <SiCplusplus className="text-blue-600" /> },
-      { name: "C#", icon: <TbBrandCSharp className="text-purple-700" /> },
+      { name: "C++", icon: <SiCplusplus className="text-black" /> },
+      { name: "C#", icon: <TbBrandCSharp className="text-black" /> },
     ],
   },
   {
     category: "Web Development",
     items: [
-      { name: "React.js", icon: <SiReact className="text-blue-400" /> },
-      { name: "JavaScript", icon: <SiJavascript className="text-yellow-500" /> },
-      { name: "Node.js", icon: <SiNodedotjs className="text-green-600" /> },
-      { name: "MySQL", icon: <SiMysql className="text-blue-700" /> },
-      { name: "HTML", icon: <SiHtml5 className="text-blue-700" /> },
+      { name: "React.js", icon: <SiReact className="text-black" /> },
+      { name: "JavaScript", icon: <SiJavascript className="text-black" /> },
+      { name: "Node.js", icon: <SiNodedotjs className="text-black" /> },
+      { name: "MySQL", icon: <SiMysql className="text-black" /> },
+      { name: "HTML", icon: <SiHtml5 className="text-black" /> },
     ],
   },
   {
     category: "Mobile Development",
     items: [
-      { name: "AndroidStudio", icon: <SiAndroidstudio className="text-blue-400" /> },
-      { name: "Kotlin", icon: <SiKotlin className="text-yellow-500" /> },
+      { name: "AndroidStudio", icon: <SiAndroidstudio className="text-black" /> },
+      { name: "Kotlin", icon: <SiKotlin className="text-black" /> },
     ],
   },
   {
     category: "Data",
     items: [
-      { name: "MongoDB", icon: <SiMongodb className="text-blue-400" /> },
-      { name: "MySQL", icon: <SiMysql className="text-yellow-500" /> },
-    
+      { name: "MongoDB", icon: <SiMongodb className="text-black" /> },
+      { name: "MySQL", icon: <SiMysql className="text-black" /> },
     ],
   },
   {
     category: "Design & Tools",
     items: [
-      { name: "Adobe Photoshop", icon: <SiAdobephotoshop className="text-blue-500" /> },
+      { name: "Adobe Photoshop", icon: <SiAdobephotoshop className="text-black" /> },
       { name: "3D Max", icon:  <img src="/3dsmax.png" alt="3ds Max Logo" width="60" height="60" />},
     ],
   },
 ];
 
 const Tech = () => {
-  const [openSections, setOpenSections] = useState({
-    "Programming Languages": false,
-    "Game Engines": false,
-    "Web Development": false,
-    "Design & Tools": false,
-  });
+  const [openSections, setOpenSections] = useState({});
 
   const toggleSection = (category) => {
     setOpenSections((prevState) => ({
@@ -94,7 +88,7 @@ const Tech = () => {
               className="flex justify-between items-center cursor-pointer border-b border-black pb-2 mb-4"
               onClick={() => toggleSection(tech.category)}
             >
-              <h2 className=" cursor: pointer text-2xl font-semibold text-black">{tech.category}</h2>
+              <h2 className="text-2xl font-semibold text-black">{tech.category}</h2>
               <motion.div
                 animate={{ rotate: openSections[tech.category] ? 90 : 0 }}
                 transition={{ duration: 0.3 }}

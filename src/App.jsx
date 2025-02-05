@@ -7,36 +7,37 @@ import Contact from './components/Contact';
 import IntroAnimation from './components/IntroAnimation';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true);  // Siempre mostrar la intro
+  const [showIntro, setShowIntro] = useState(true);
   const [isIntroComplete, setIsIntroComplete] = useState(false);
-  const introDuration = 7000;  // Duración de la animación en milisegundos
-  
+  const introDuration = 7000;
+
   useEffect(() => {
     setShowIntro(true);
-
     const timer = setTimeout(() => {
       setShowIntro(false);
-      setIsIntroComplete(true); // La animación terminó
+      setIsIntroComplete(true);
     }, introDuration);
 
     return () => clearTimeout(timer);
   }, [introDuration]);
 
   return (
-    <>
-      <div style={{ overflow: 'hidden' }}>
-        {showIntro && <IntroAnimation setIsIntroComplete={setIsIntroComplete} />}
-      </div>
-      <div className="relative min-h-screen w-full bg-gray-100 text-black">
-        <main className="flex flex-col items-center px-4 md:px-8 lg:px-16 z-10 pt-24">
-          <Navbar isIntroComplete={isIntroComplete} />
+    <div className="w-full min-h-screen bg-gray-100 text-black overflow-x-hidden">
+      {showIntro && (
+        <div className="fixed inset-0 z-50">
+          <IntroAnimation setIsIntroComplete={setIsIntroComplete} />
+        </div>
+      )}
+      <div className={`relative ${showIntro ? 'hidden' : 'block'}`}>
+        <Navbar isIntroComplete={isIntroComplete} />
+        <main className="flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-16 z-10 pt-24">
           <Hero />
           <Tech />
           <Projects />
           <Contact />
         </main>
       </div>
-    </>
+    </div>
   );
 }
 

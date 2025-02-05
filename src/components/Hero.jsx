@@ -34,9 +34,9 @@ export default function Hero() {
   }, [charIndex, isDeleting, index]);
 
   return (
-    <section id="home" className=" cursor:pointer flex flex-col justify-center items-center h-screen -mt-16 text-center px-4">
+    <section id="home" className="flex flex-col justify-center items-center min-h-screen text-center px-4 sm:px-6 md:px-8">
       <motion.h1
-        className="cursor:pointer text-6xl font-bold text-gray-900"
+        className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 1.5 }}
@@ -45,19 +45,19 @@ export default function Hero() {
       </motion.h1>
     
       <motion.h2
-        className="cursor:pointer text-4xl text-gray-600 mt-4"
+        className="text-2xl sm:text-3xl md:text-4xl text-gray-600 mt-4"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 2 }}
       >
-         I am a <span className=" cursor:pointer relative inline-block"> Developer
+        I am a <span className="relative inline-block"> Developer
           <span className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-r from-orange-600 to-pink-500 opacity-50"></span>
         </span>
       </motion.h2>
 
       {/* Animación de las palabras que van apareciendo */}
       <motion.h3
-        className="relative text-xl text-gray-700 mt-2 inline-block"
+        className="relative text-lg sm:text-xl md:text-2xl text-gray-700 mt-2 inline-block"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 2 }} 
