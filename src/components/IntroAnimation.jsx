@@ -78,7 +78,7 @@ export default function IntroAnimation({ setIsIntroComplete }) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 5 }}  // Retraso para que aparezca más tarde
       >
-        AC
+       AC
       </motion.div>
     </motion.div>
   );

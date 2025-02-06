@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section id="contact" className="px-10 py-16 bg-gray-100 text-gray-800">
+    <section id="contact" className="px-4 py-16 bg-gray-100 text-gray-800">
       <motion.div 
         initial={{ opacity: 0, y: 30 }} 
         animate={{ opacity: 1, y: 0 }} 
@@ -11,7 +11,7 @@ const Contact = () => {
         className="max-w-4xl mx-auto text-center"
       >
         <motion.h1
-          className="text-6xl font-semibold text-gray-800 text-center"
+          className="text-4xl md:text-6xl font-semibold text-gray-800"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 2 }}
@@ -19,7 +19,7 @@ const Contact = () => {
           Contact
         </motion.h1>
         <motion.p
-          className="text-xl text-center mt-8 text-gray-600"
+          className="text-lg md:text-xl mt-6 md:mt-8 text-gray-600"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -28,97 +28,73 @@ const Contact = () => {
         </motion.p>
       </motion.div>
 
-      <div className="mt-8">
-        {/* Contact and Image in Flexbox layout */}
-        <div className="flex items-center justify-center space-x-20">
-          <div className="flex-shrink-0">
-            <img 
-              src="/AlmaColina_Image.jpg" 
-              alt="Alma Colina" 
-              className="w-[250px] md:w-[300px] rounded-full shadow-lg shadow-gray-700 transition-all duration-300 hover:scale-105"
-            />
+      {/* Contact and Image in Flexbox layout */}
+      <div className="mt-8 flex flex-col md:flex-row items-center md:items-start md:justify-center md:space-x-10">
+        <img 
+          src="/AlmaColina_Image.jpg" 
+          alt="Alma Colina" 
+          className="w-40 md:w-60 rounded-full shadow-lg shadow-gray-700 transition-all duration-300 hover:scale-105"
+        />
+        
+        {/* Contact Info */}
+        <div className="mt-6 md:mt-0 flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="flex items-center space-x-2">
+            <FaEnvelope className="text-orange-600" />
+            <a href="mailto:almacolina2015@gmail.com" className="text-lg hover:text-orange-600 transition duration-300">
+              almacolina2015@gmail.com
+            </a>
           </div>
-
-          {/* Contact Info */}
-          <div className="flex flex-col items-start">
-            <div className="flex items-center space-x-2">
-              <FaEnvelope className="text-orange-600" />
-              <a href="mailto:almacolina2015@gmail.com" className="text-lg hover:text-orange-600 transition duration-300">
-                almacolina2015@gmail.com
-              </a>
-            </div>
-            <div className="flex items-center space-x-2 mt-4">
-              <FaPhone className="text-orange-600" />
-              <p className="text-lg">+34 644762934</p>
-            </div>
-
-            {/* Social Media Links */}
-            <div className="flex mt-6 space-x-6">
-              <a
-                href="https://www.linkedin.com/in/yourprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-orange-600 transition duration-300"
-              >
-                <FaLinkedin size={24} />
-              </a>
-            </div>
+          <div className="flex items-center space-x-2 mt-4">
+            <FaPhone className="text-orange-600" />
+            <p className="text-lg">+34 644762934</p>
+          </div>
+          <div className="flex mt-6 space-x-6">
+            <a
+              href="https://www.linkedin.com/in/almacolina"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-orange-600 transition duration-300"
+            >
+              <FaLinkedin size={24} />
+            </a>
+            <a
+            href="https://github.com/AlmaColina"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-700 hover:text-orange-600 transition duration-300"
+          >
+            <FaGithub size={20} />
+          </a>
           </div>
         </div>
       </div>
 
       {/* Work Experience */}
       <div className="mt-16 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-4">Work Experience</h2>
-        <div className="space-y-4">
-
-          <div className="flex items-start space-x-4">
-            <img src="/LocationService.png" alt="Production Assistant Logo" className="w-16 h-10" />
-            <div>
-              <h3 className="text-xl font-semibold">Audiovisual Location scout & Location Assistant</h3>
-              <p className="text-gray-600">Location Service  |  2021 - Present</p>
-              <p className="text-gray-500 mt-2">
-                Assisted in various stages of film production, from pre-production planning to on-set support. Focused on logistics, coordinating schedules, and helping maintain the creative vision.
-              </p>
+        <h2 className="text-3xl font-semibold mb-6 text-center md:text-left">Work Experience</h2>
+        <div className="space-y-6">
+          {[
+            { img: "/LocationService.png", title: "Audiovisual Location scout & Assistant", company: "Location Service", years: "2021 - Present", description: "Assisted in various stages of film production, coordinating logistics and schedules." },
+            { img: "/almaLogo.png", title: "Game Developer", company: "Freelance", years: "2024 - Present", description: "Developing interactive experiences using Unity and C#." },
+            { img: "/247.png", title: "Audiovisual Location Assistant", company: "Twenty Four Seven", years: "May 2022 - June 2022", description: "" },
+            { img: "/fundeps.png", title: "Community Manager - Digital Product Management", company: "Fundeps", years: "2021 - January 2022", description: "" }
+          ].map((job, index) => (
+            <div key={index} className="flex flex-col md:flex-row items-center md:items-start space-x-0 md:space-x-4">
+              <img src={job.img} alt={job.title} className="w-16 h-10" />
+              <div className="mt-4 md:mt-0">
+                <h3 className="text-xl font-semibold">{job.title}</h3>
+                <p className="text-gray-600">{job.company} | {job.years}</p>
+                <p className="text-gray-500 mt-2">{job.description}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="flex items-start space-x-4">
-            <img src="/almaLogo.png" alt="Game Developer Logo" className="w-16 h-10" />
-            <div>
-              <h3 className="text-xl font-semibold">Game Developer</h3>
-              <p className="text-gray-600">Freelance  |  2024 - Present</p>
-              <p className="text-gray-500 mt-2">
-                I design and develop video games with a focus on interactive experiences, using Unity and C#. My work includes both 3D games and educational projects.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start space-x-4">
-            <img src="/247.png" alt="Game Developer Logo" className="w-16 h-10" />
-            <div>
-              <h3 className="text-xl font-semibold">Audiovisual Location Assistant</h3>
-              <p className="text-gray-600">Twenty Four Seven |  May 2022 - June 2022</p>
-              <p className="text-gray-500 mt-2">
-                
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start space-x-4">
-            <img src="/fundeps.png" alt="Game Developer Logo" className="w-16 h-10" />
-            <div>
-              <h3 className="text-xl font-semibold">Community Manager - Digital Product Management</h3>
-              <p className="text-gray-600">Fundeps | 2021 - January 2022</p>
-              <p className="text-gray-500 mt-2">     
-              </p>
-            </div>
-          </div>
-        </div>     
+          ))}
+        </div>
       </div>
 
+      {/* Education */}
       <div className="mt-16 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-4">Education</h2>
-        <div className="flex items-center space-x-5 space-y-5">
+        <h2 className="text-3xl font-semibold mb-6 text-center md:text-left">Education</h2>
+        <div className="space-y-6">
           <img src="/insPedralbes.jpg" alt="Institut Pedralbes Logo" className="w-18 h-14 rounded-t-full"/>
           <div>
             <p className="text-xl font-semibold">Higher Degree in Multiplatform Application Development</p>
@@ -141,7 +117,7 @@ const Contact = () => {
 
       {/* Press Section */}
       <div className="mt-16 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-4">Press</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-center md:text-left">Press</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <a
             href="https://politiquesdigitals.gencat.cat/ca/ciutadania/donatic/premis-dona-tic/guardonades-edicions-anteriors/Guardonades-edicio-2024/"
@@ -170,13 +146,12 @@ const Contact = () => {
         </div>
       </div>
 
-      <footer className="mt-20 py-6 bg-gradient-to-r from-orange-600 to-pink-500 opacity-50 text-white text-center">
-        <p className="text-sm">
-          &copy; {new Date().getFullYear()} Alma Colina. All rights reserved.
-        </p>
+      {/* Footer */}
+      <footer className="mt-20 py-6 bg-gradient-to-r from-orange-600 to-pink-500 text-white text-center">
+        <p className="text-sm">&copy; {new Date().getFullYear()} Alma Colina. All rights reserved.</p>
         <div className="flex justify-center space-x-4 mt-2">
           <a
-            href="https://www.linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/almacolina"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300 transition duration-300"
@@ -184,7 +159,7 @@ const Contact = () => {
             <FaLinkedin size={20} />
           </a>
           <a
-            href="https://github.com/yourprofile"
+            href="https://github.com/AlmaColina"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300 transition duration-300"

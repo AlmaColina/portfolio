@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BiLogoUnity } from "react-icons/bi";
-import { SiUnrealengine, SiCplusplus, SiMysql, SiReact, SiJavascript, SiNodedotjs, SiAdobephotoshop, SiHtml5, SiMongodb, SiAndroidstudio, SiKotlin } from "react-icons/si";
+import { SiUnrealengine, SiCplusplus, SiMysql, SiReact, SiJavascript, SiNodedotjs, SiAdobephotoshop, SiHtml5, SiMongodb, SiAndroidstudio, SiKotlin, SiCss3 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { motion } from "framer-motion";
 
@@ -20,8 +20,8 @@ const technologies = [
       { name: "React.js", icon: <SiReact className="text-black" /> },
       { name: "JavaScript", icon: <SiJavascript className="text-black" /> },
       { name: "Node.js", icon: <SiNodedotjs className="text-black" /> },
-      { name: "MySQL", icon: <SiMysql className="text-black" /> },
       { name: "HTML", icon: <SiHtml5 className="text-black" /> },
+      { name: "CSS", icon: <SiCss3 className="text-black" /> },
     ],
   },
   {
