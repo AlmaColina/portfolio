@@ -73,7 +73,7 @@ const Tech = () => {
       </motion.h1>
 
       <motion.h2
-        className="text-2xl text-gray-600 mt-4 max-w-3xl text-center"
+        className="text-xl text-gray-600 mt-4 max-w-3xl text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 2 }}

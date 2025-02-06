@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 z-10 w-full px-16 py-6 text-black backdrop-blur-md flex justify-between items-center ${scrollY > 50 ? 'bg-white shadow-md' : 'bg-transparent'} transition-all duration-300`}>
       <ul className="hidden md:flex gap-10 items-center">
-        {["home", "tech", "projects", "contact"].map((item) => (
+        {["home", "skills", "projects", "contact"].map((item) => (
           <li key={item} onClick={() => handleNavClick(item)} className={`cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 relative ${selectedNav === item ? 'opacity-100' : ''}`}>
             {item.charAt(0).toUpperCase() + item.slice(1)}
             {selectedNav === item && <span className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-r from-orange-600 to-pink-500 opacity-50"></span>}
@@ -63,7 +63,7 @@ const Navbar = () => {
             ))}
           </ul>
           <ul className="flex gap-5 mt-auto">
-            {[{ icon: BsLinkedin, link: "https://www.linkedin.com" }, { icon: BsGithub, link: "https://www.github.com" }].map((social, index) => (
+            {[{ icon: BsLinkedin, link: "https://www.linkedin.com/in/almacolina" }, { icon: BsGithub, link: "https://github.com/AlmaColina" }].map((social, index) => (
               <li key={index} className="cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100 hover:text-gray-600">
                 <a href={social.link} target="_blank" rel="noopener noreferrer">
                   <social.icon size={24} />

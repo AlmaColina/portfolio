@@ -24,7 +24,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Let's create something amazing together! Reach out, and I'll get back to you soon.
+          Reach out, and I'll get back to you soon :)
         </motion.p>
       </motion.div>
 
@@ -38,13 +38,14 @@ const Contact = () => {
         
         {/* Contact Info */}
         <div className="mt-6 md:mt-0 flex flex-col items-center md:items-start text-center md:text-left">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3 mt-9">
+
             <FaEnvelope className="text-orange-600" />
             <a href="mailto:almacolina2015@gmail.com" className="text-lg hover:text-orange-600 transition duration-300">
               almacolina2015@gmail.com
             </a>
           </div>
-          <div className="flex items-center space-x-2 mt-4">
+          <div className="flex items-center space-x-2 mt-6">
             <FaPhone className="text-orange-600" />
             <p className="text-lg">+34 644762934</p>
           </div>
