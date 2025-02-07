@@ -55,7 +55,7 @@ const Navbar = () => {
       {isOpen && isMobile && (
         <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }} className="fixed top-0 right-0 flex flex-col h-screen w-1/2 bg-white text-black p-8 gap-8 border-l border-gray-800 md:hidden">
           <ul className="flex flex-col gap-8">
-            {["home", "tech", "projects", "contact"].map((item) => (
+            {["home", "skills", "projects", "contact"].map((item) => (
               <li key={item} onClick={() => handleNavClick(item)} className={`cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 relative ${selectedNav === item ? 'opacity-100' : ''}`}>
                 {item.charAt(0).toUpperCase() + item.slice(1)}
                 {selectedNav === item && <span className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-r from-orange-600 to-pink-500 opacity-50"></span>}
