@@ -43,8 +43,8 @@ export default function Hero() {
     const size = Math.random() * 5 + 2; // Tamaño entre 2px y 7px
     const left = Math.random() * 100; // Posición inicial aleatoria
     const top = Math.random() * 100; // Posición inicial aleatoria
-    const duration = Math.random() * 4 + 4; ; 
-    const delay = 0; // Retraso aleatorio
+    const duration =  9;
+    const delay = 9; // Retraso aleatorio
     const color = colors[Math.floor(Math.random() * colors.length)];
 
     return (
