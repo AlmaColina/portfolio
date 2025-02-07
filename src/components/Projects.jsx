@@ -9,6 +9,16 @@ export default function Projects() {
 
   const projects = [
     {
+      name: "Max's Recipe Rescue",
+      description:"The game aims to be an educational tool for English teachers, helping 10-year-old students learn food-related vocabulary, with a specific focus on distinguishing countable and uncountable nouns. It will provide a structured, yet fun, way to teach and practice this vocabulary through interactive gameplay. Teachers can use it as a supplemental tool in lessons, homework, or classroom activities to reinforce language concepts in an engaging, student-friendly format.",
+      link: "",
+      tech: ["Unity", "C#", "C++","Fmod", "3Ds Max"],
+      category: "VideoGame", 
+      date: "Des 2024 - In Progress",
+      image: "/marianProject.png",
+      hoverImages: [ "/mProject.1.png", "/mProject.2.png", "/mProject.png", "/mProject.3.png"],
+    },
+    {
       name: "Hollywood Nightmare",
       description:"This is a collaborative project between three developers and three 3D artists. The aim of the project is to create an interactive experience that allows players to explore the cinematic world while seeking to represent the work of women in the audiovisual industry. It is developed with Unity, inspired by arcade game style. It offers 3 different game mechanics (Shoot 'em up, Beat 'em Up, and Shooter Gallery), two female characters (mother and daughter), and the possibility of immersing players in the film sets of iconic movies.",
       link: "https://amanifd.itch.io/hollywood-nightmare",

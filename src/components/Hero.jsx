@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import "./particles.css";
+import { s } from "framer-motion/client";
 
 export default function Hero() {
   const words = ["• Web Development •", "• Game Design •", "• Game Development •", "• Java Programmer •"];
@@ -33,8 +35,40 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, index]);
 
+  // Paleta de colores: naranja, rosa y gris
+  const colors = ["#FF8C00", "#FF1493", "#A9A9A9"];
+
+  // Generar partículas con animaciones aleatorias
+  const particles = Array.from({ length: 30 }, (_, i) => {
+    const size = Math.random() * 5 + 2; // Tamaño entre 2px y 7px
+    const left = Math.random() * 100; // Posición inicial aleatoria
+    const top = Math.random() * 100; // Posición inicial aleatoria
+    const duration = Math.random() * 4 + 4; ; 
+    const delay = 0; // Retraso aleatorio
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    return (
+      <div
+        key={i}
+        className="particle"
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          left: `${left}vw`,
+          top: `${top}vh`,
+          animationDuration: `${duration}s`, 
+          animationDelay: `${delay}s`,
+          backgroundColor: color,
+        }}
+      />
+    );
+  });
+
   return (
-    <section id="home" className="flex flex-col justify-center items-center min-h-screen text-center px-4 sm:px-6 md:px-8">
+    <section id="home" className="hero flex flex-col justify-center items-center min-h-screen text-center px-4 sm:px-6 md:px-8">
+      {/* Particles */}
+      {particles}
+
       <motion.h1
         className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900"
         initial={{ opacity: 0, y: 30 }}
@@ -43,7 +77,7 @@ export default function Hero() {
       >
         Alma Colina
       </motion.h1>
-    
+
       <motion.h2
         className="text-2xl sm:text-3xl md:text-4xl text-gray-600 mt-4"
         initial={{ opacity: 0, y: 40 }}
@@ -55,12 +89,11 @@ export default function Hero() {
         </span>
       </motion.h2>
 
-      {/* Animación de las palabras que van apareciendo */}
       <motion.h3
         className="relative text-lg sm:text-xl md:text-2xl text-gray-700 mt-2 inline-block"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ ease: "easeOut", duration: 2 }} 
+        transition={{ ease: "easeOut", duration: 2 }}
       >
         {displayedText}
         <span className="animate-blink">|</span>

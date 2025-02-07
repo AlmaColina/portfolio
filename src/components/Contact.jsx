@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <section id="contact" className="px-4 py-16 bg-gray-100 text-gray-800">
+    <section id="contact" className="px-4 py-16 text-gray-800">
       <motion.div 
         initial={{ opacity: 0, y: 30 }} 
         animate={{ opacity: 1, y: 0 }} 
